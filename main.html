@@ -1,29 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>My Favorite Holiday Destination</title>
-</head>
-<body>
-  <h1>Paradise Island</h1>
-  <br>
-  <p>Paradise Island is a stunning tropical destination located in the middle of the ocean. It boasts pristine white sandy beaches, crystal-clear turquoise waters, and breathtaking sunsets. With its tranquil and serene atmosphere, Paradise Island is the perfect place to escape from the hustle and bustle of everyday life.</p>
-  
-  <h2>Top 5 Attractions in Paradise Island:</h2>
-  <ol>
-    <li><strong>Golden Bay Beach:</strong> This secluded beach offers a private and serene environment, surrounded by lush greenery.</li>
-    <li><strong>Dolphin Cove:</strong> Interact with friendly dolphins and enjoy thrilling dolphin shows at this amazing marine park.</li>
-    <li><strong>Paradise Reef:</strong> Explore the vibrant underwater world through snorkeling or diving in this stunning coral reef.</li>
-    <li><strong>Island Hiking Trails:</strong> Embark on adventurous hikes and discover the breathtaking natural beauty of the island.</li>
-    <li><strong>Tropical Sunset Cruise:</strong> Sail into the horizon while enjoying a romantic sunset cruise, complete with delicious cocktails and live music.</li>
-  </ol>
-  
-  <h2>Must-Try Foods in Paradise Island:</h2>
-  <ul>
-    <li><em>Coconut Curry Shrimp:</em> Indulge in the flavors of the island with this delicious seafood dish, infused with aromatic coconut and spices.</li>
-    <li><em>Pineapple Fried Rice:</em> Experience the perfect blend of sweet and savory in this mouthwatering rice dish, garnished with fresh pineapple.</li>
-    <li><em>Mango Sticky Rice:</em> Treat your taste buds to this delightful dessert, featuring ripe mangoes and sticky rice drizzled with coconut milk.</li>
-    <li><em>Grilled Lobster:</em> Savor the succulent and tender meat of fresh lobster, grilled to perfection and served with tangy lemon butter.</li>
-    <li><em>Papaya Salad:</em> Enjoy a refreshing salad made from crisp papaya, tossed in a tangy dressing with a hint of spiciness.</li>
-  </ul>
-</body>
-</html>
+function reverse(arr) {
+  return arr.reverse();
+}
+
+var readline = require("readline").createInterface(process.stdin);
+
+let inputArr = [];
+var lineNumber = -1;
+var inputSize;
+
+readline.on("line", readInputs);
+
+function readInputs(line) {
+  inputArr.push(line);
+  lineNumber++;
+
+  if (lineNumber == 0) {
+    logic("s");
+    readline.close();
+  }
+}
+
+function logic(input) {
+  let str = JSON.parse(inputArr[0].trim());
+  console.log(reverse(str).join(" ").trim());
+}
